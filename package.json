@@ -1,0 +1,38 @@
+{
+  "name": "@watchtowerobservability/expo",
+  "version": "0.1.0",
+  "repository": { "type": "git", "url": "git+https://github.com/watchtowerobservability/watchtower-expo.git" },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "description": "Watchtower for Expo: config plugin, automatic init from app.json, EAS Update context and source maps (thin layer over @watchtowerobservability/react-native)",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": ["src", "bin", "app.plugin.js"],
+  "bin": { "wt-expo-sourcemaps": "bin/wt-expo-sourcemaps.js" },
+  "exports": {
+    ".": { "types": "./src/index.d.ts", "default": "./src/index.js" },
+    "./app.plugin": "./app.plugin.js",
+    "./package.json": "./package.json"
+  },
+  "license": "Apache-2.0",
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test test/" },
+  "dependencies": { "@watchtowerobservability/react-native": "^0.2.0" },
+  "peerDependencies": {
+    "expo": ">=50",
+    "expo-application": ">=5",
+    "expo-constants": ">=15",
+    "expo-device": ">=5",
+    "expo-router": ">=3",
+    "expo-updates": ">=0.18"
+  },
+  "peerDependenciesMeta": {
+    "expo-application": { "optional": true },
+    "expo-constants": { "optional": true },
+    "expo-device": { "optional": true },
+    "expo-router": { "optional": true },
+    "expo-updates": { "optional": true }
+  }
+}
